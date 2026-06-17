@@ -34,7 +34,6 @@ const SignupScreen = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [role, setRole] = useState('user');
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -47,7 +46,6 @@ const SignupScreen = ({ navigation }) => {
   const shakeAnim = useRef(new Animated.Value(0)).current;
   const errorOpacity = useRef(new Animated.Value(0)).current;
   const buttonScale = useRef(new Animated.Value(1)).current;
-  const roleSwitchAnim = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     Animated.parallel([
@@ -70,14 +68,7 @@ const SignupScreen = ({ navigation }) => {
     ]).start();
   }, []);
 
-  useEffect(() => {
-    Animated.spring(roleSwitchAnim, {
-      toValue: role === 'admin' ? 1 : 0,
-      friction: 6,
-      tension: 80,
-      useNativeDriver: false,
-    }).start();
-  }, [role]);
+
 
   const triggerShake = () => {
     Animated.sequence([
@@ -135,7 +126,7 @@ const SignupScreen = ({ navigation }) => {
 
     setLoading(true);
     try {
-      const result = await signup(email.trim(), password, displayName.trim(), role);
+      const result = await signup(email.trim(), password, displayName.trim(), 'user');
       if (result && !result.success) {
         const errMsg = result.error || 'Signup failed. Please try again.';
         const message =
@@ -176,13 +167,7 @@ const SignupScreen = ({ navigation }) => {
     if (error) hideError();
   };
 
-  const switchWidth = width - (SPACING.xl * 2);
-  const halfSwitch = (switchWidth - 8) / 2;
 
-  const indicatorTranslateX = roleSwitchAnim.interpolate({
-    inputRange: [0, 1],
-    outputRange: [0, halfSwitch],
-  });
 
   return (
     <View style={styles.container}>
@@ -364,70 +349,7 @@ const SignupScreen = ({ navigation }) => {
               </TouchableOpacity>
             </View>
 
-            {/* Role Selector */}
-            <View style={styles.roleSelectorContainer}>
-              <Text style={styles.roleSelectorLabel}>I am a</Text>
-              <View style={styles.roleSwitch}>
-                <Animated.View
-                  style={[
-                    styles.roleSwitchIndicator,
-                    {
-                      width: halfSwitch,
-                      transform: [{ translateX: indicatorTranslateX }],
-                    },
-                  ]}
-                >
-                  <LinearGradient
-                    colors={COLORS.gradientPrimary || ['#6C5CE7', '#a855f7']}
-                    start={{ x: 0, y: 0 }}
-                    end={{ x: 1, y: 0 }}
-                    style={styles.roleSwitchIndicatorGradient}
-                  />
-                </Animated.View>
-                <TouchableOpacity
-                  style={[styles.roleSwitchOption, { width: halfSwitch }]}
-                  onPress={() => setRole('user')}
-                  activeOpacity={0.8}
-                  disabled={loading}
-                >
-                  <Ionicons
-                    name="school-outline"
-                    size={18}
-                    color={role === 'user' ? '#FFFFFF' : COLORS.textMuted}
-                    style={{ marginRight: 6 }}
-                  />
-                  <Text
-                    style={[
-                      styles.roleSwitchText,
-                      role === 'user' && styles.roleSwitchTextActive,
-                    ]}
-                  >
-                    Student
-                  </Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  style={[styles.roleSwitchOption, { width: halfSwitch }]}
-                  onPress={() => setRole('admin')}
-                  activeOpacity={0.8}
-                  disabled={loading}
-                >
-                  <Ionicons
-                    name="shield-outline"
-                    size={18}
-                    color={role === 'admin' ? '#FFFFFF' : COLORS.textMuted}
-                    style={{ marginRight: 6 }}
-                  />
-                  <Text
-                    style={[
-                      styles.roleSwitchText,
-                      role === 'admin' && styles.roleSwitchTextActive,
-                    ]}
-                  >
-                    Admin
-                  </Text>
-                </TouchableOpacity>
-              </View>
-            </View>
+
 
             {/* Signup Button */}
             <Animated.View style={{ transform: [{ scale: buttonScale }] }}>

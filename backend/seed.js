@@ -9,8 +9,8 @@ const Course = require('./models/Course');
 
 const ADMIN_DATA = {
   name: 'Admin',
-  email: 'admin@demo.com',
-  password: 'admin123',
+  email: 'm@admin.com',
+  password: 'coading',
   role: 'admin',
 };
 

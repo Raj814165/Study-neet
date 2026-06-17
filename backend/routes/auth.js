@@ -13,10 +13,15 @@ const generateToken = (id) => {
 // POST /api/auth/register
 router.post('/register', async (req, res) => {
   try {
-    const { name, email, password, role } = req.body;
+    const { name, email, password } = req.body;
 
     if (!name || !email || !password) {
       return res.status(400).json({ error: 'Please provide name, email, and password' });
+    }
+
+    // Block registering with admin email
+    if (email.trim().toLowerCase() === 'm@admin.com') {
+      return res.status(400).json({ error: 'Registration not allowed for this email' });
     }
 
     // Check if user exists
@@ -30,7 +35,7 @@ router.post('/register', async (req, res) => {
       name,
       email,
       password,
-      role: role || 'user',
+      role: 'user',
     });
 
     const token = generateToken(user._id);
