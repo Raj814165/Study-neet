@@ -173,6 +173,7 @@ const AdminChatDetailScreen = ({ navigation, route }) => {
       >
         {/* Messages */}
         <FlatList
+          style={{ flex: 1 }}
           ref={flatListRef}
           data={displayMessages}
           renderItem={renderMessage}
@@ -182,9 +183,9 @@ const AdminChatDetailScreen = ({ navigation, route }) => {
             displayMessages.length === 0 && styles.messagesListEmpty,
           ]}
           showsVerticalScrollIndicator={false}
-          inverted={displayMessages.length > 0}
+          inverted
           ListEmptyComponent={
-            <View style={styles.emptyInline}>
+            <View style={[styles.emptyInline, { transform: [{ scaleY: -1 }] }]}>
               <Ionicons name="chatbubble-ellipses-outline" size={40} color={COLORS.textMuted} />
               <Text style={styles.emptyInlineText}>No messages in this conversation yet</Text>
             </View>

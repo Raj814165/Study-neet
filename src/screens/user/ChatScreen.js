@@ -249,6 +249,7 @@ const ChatScreen = ({ navigation }) => {
       >
         {/* Messages */}
         <FlatList
+          style={{ flex: 1 }}
           ref={flatListRef}
           data={displayMessages}
           renderItem={renderMessage}
@@ -258,8 +259,12 @@ const ChatScreen = ({ navigation }) => {
             displayMessages.length === 0 && styles.messagesListEmpty,
           ]}
           showsVerticalScrollIndicator={false}
-          inverted={displayMessages.length > 0}
-          ListEmptyComponent={renderEmpty}
+          inverted
+          ListEmptyComponent={
+            <View style={{ transform: [{ scaleY: -1 }] }}>
+              {renderEmpty()}
+            </View>
+          }
           onScroll={handleScroll}
           scrollEventThrottle={200}
           removeClippedSubviews={Platform.OS === 'android'}
