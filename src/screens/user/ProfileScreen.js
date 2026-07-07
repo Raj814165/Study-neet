@@ -104,7 +104,6 @@ const ProfileScreen = ({ navigation }) => {
       title: 'Account',
       items: [
         { icon: 'person-outline', label: 'Edit Profile', onPress: () => navigation.navigate('EditProfile') },
-        { icon: 'notifications-outline', label: 'Notifications', onPress: () => navigation.navigate('Notifications') },
       ],
     },
     {

@@ -22,7 +22,7 @@ import VideoPlayerScreen from '../screens/user/VideoPlayerScreen';
 import ProfileScreen from '../screens/user/ProfileScreen';
 import SupportScreen from '../screens/user/SupportScreen';
 import EditProfileScreen from '../screens/user/EditProfileScreen';
-import NotificationsScreen from '../screens/user/NotificationsScreen';
+
 import DownloadSettingsScreen from '../screens/user/DownloadSettingsScreen';
 import AboutScreen from '../screens/user/AboutScreen';
 
@@ -111,7 +111,7 @@ function MainStack() {
       />
       <Stack.Screen name="Support" component={SupportScreen} />
       <Stack.Screen name="EditProfile" component={EditProfileScreen} />
-      <Stack.Screen name="Notifications" component={NotificationsScreen} />
+
       <Stack.Screen name="DownloadSettings" component={DownloadSettingsScreen} />
       <Stack.Screen name="About" component={AboutScreen} />
       <Stack.Screen name="AdminDashboard" component={AdminDashboard} />
