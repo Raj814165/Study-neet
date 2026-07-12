@@ -6,7 +6,6 @@ import {
   FlatList,
   TextInput,
   TouchableOpacity,
-  Animated,
   StatusBar,
   KeyboardAvoidingView,
   Platform,
@@ -64,6 +63,11 @@ const MessageBubble = React.memo(({ message, isAdmin }) => {
       </View>
     </View>
   );
+}, (prevProps, nextProps) => {
+  // Only re-render if the message id or text changed
+  return prevProps.message.id === nextProps.message.id &&
+    prevProps.message.text === nextProps.message.text &&
+    prevProps.isAdmin === nextProps.isAdmin;
 });
 
 const AdminChatDetailScreen = ({ navigation, route }) => {
@@ -72,31 +76,50 @@ const AdminChatDetailScreen = ({ navigation, route }) => {
   const { getMessages, sendMessage, markReadByAdmin, deleteConversation } = useChat();
   const [inputText, setInputText] = useState('');
   const flatListRef = useRef(null);
-  const isNearBottomRef = useRef(true);
-  const isFirstRender = useRef(true);
+  const hasScrolledToEnd = useRef(false);
+  const lastMessageCountRef = useRef(0);
 
-  const messages = getMessages(conversationId);
+  const rawMessages = getMessages(conversationId);
 
-  // Stable message IDs string to detect actual new messages
-  const messageIds = useMemo(() => messages.map((m) => m.id).join(','), [messages]);
+  // Stabilize messages — only update reference when message IDs actually change
+  const messagesRef = useRef(rawMessages);
+  const stableMessageIds = useMemo(() => rawMessages.map((m) => m.id).join(','), [rawMessages]);
 
+  const messages = useMemo(() => {
+    messagesRef.current = rawMessages;
+    return rawMessages;
+  }, [stableMessageIds]);
+
+  // Mark read on mount and when new messages arrive
   useEffect(() => {
     markReadByAdmin(conversationId);
   }, [conversationId]);
 
   useEffect(() => {
-    markReadByAdmin(conversationId);
-  }, [messageIds]);
-
-  const handleContentSizeChange = useCallback(() => {
-    if (messages.length === 0) return;
-    if (isFirstRender.current) {
-      flatListRef.current?.scrollToEnd({ animated: false });
-      isFirstRender.current = false;
-    } else if (isNearBottomRef.current) {
-      flatListRef.current?.scrollToEnd({ animated: true });
+    if (messages.length > 0) {
+      markReadByAdmin(conversationId);
     }
-  }, [messages.length]);
+  }, [stableMessageIds]);
+
+  // Scroll to end only on initial load and when NEW messages are added
+  useEffect(() => {
+    if (messages.length === 0) return;
+
+    if (!hasScrolledToEnd.current) {
+      // First load — scroll to end without animation
+      setTimeout(() => {
+        flatListRef.current?.scrollToEnd({ animated: false });
+        hasScrolledToEnd.current = true;
+        lastMessageCountRef.current = messages.length;
+      }, 100);
+    } else if (messages.length > lastMessageCountRef.current) {
+      // New message added — scroll to end with animation
+      setTimeout(() => {
+        flatListRef.current?.scrollToEnd({ animated: true });
+        lastMessageCountRef.current = messages.length;
+      }, 50);
+    }
+  }, [stableMessageIds, messages.length]);
 
   const handleSend = useCallback(() => {
     if (!inputText.trim()) return;
@@ -116,12 +139,6 @@ const AdminChatDetailScreen = ({ navigation, route }) => {
   ), []);
 
   const keyExtractor = useCallback((item) => item.id, []);
-
-  const handleScroll = useCallback(({ nativeEvent }) => {
-    const { layoutMeasurement, contentOffset, contentSize } = nativeEvent;
-    const distanceFromBottom = contentSize.height - layoutMeasurement.height - contentOffset.y;
-    isNearBottomRef.current = distanceFromBottom < 100;
-  }, []);
 
   return (
     <View style={styles.container}>
@@ -175,8 +192,8 @@ const AdminChatDetailScreen = ({ navigation, route }) => {
 
       <KeyboardAvoidingView
         style={styles.flex}
-        behavior={Platform.OS === 'ios' ? 'padding' : 'padding'}
-        keyboardVerticalOffset={Platform.OS === 'ios' ? 90 : 80}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        keyboardVerticalOffset={Platform.OS === 'ios' ? 90 : 0}
       >
         {/* Messages */}
         <FlatList
@@ -196,18 +213,14 @@ const AdminChatDetailScreen = ({ navigation, route }) => {
               <Text style={styles.emptyInlineText}>No messages in this conversation yet</Text>
             </View>
           }
-          onScroll={handleScroll}
-          onLayout={() => {
-            if (isFirstRender.current && messages.length > 0) {
-              flatListRef.current?.scrollToEnd({ animated: false });
-            }
-          }}
-          onContentSizeChange={handleContentSizeChange}
-          scrollEventThrottle={200}
+          scrollEventThrottle={400}
           removeClippedSubviews={Platform.OS === 'android'}
           maxToRenderPerBatch={15}
           windowSize={11}
           initialNumToRender={20}
+          maintainVisibleContentPosition={{
+            minIndexForVisible: 0,
+          }}
         />
 
         {/* Quick Reply Suggestions */}

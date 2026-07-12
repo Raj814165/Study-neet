@@ -33,7 +33,9 @@ export const removeToken = async () => {
   }
 };
 
-// Generic API request helper with JWT
+// Generic API request helper with JWT and timeout
+const REQUEST_TIMEOUT_MS = 15000; // 15 second timeout
+
 export const apiRequest = async (endpoint, options = {}) => {
   const token = await getToken();
 
@@ -52,7 +54,14 @@ export const apiRequest = async (endpoint, options = {}) => {
   }
 
   try {
+    // Add timeout using AbortController
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+    config.signal = controller.signal;
+
     const response = await fetch(`${API_BASE_URL}${endpoint}`, config);
+    clearTimeout(timeoutId);
+
     const textData = await response.text();
     
     let data = {};
@@ -66,11 +75,16 @@ export const apiRequest = async (endpoint, options = {}) => {
     }
 
     if (!response.ok) {
-      throw new Error(data.error || `Request failed with status ${response.status}`);
+      const error = new Error(data.error || `Request failed with status ${response.status}`);
+      error.status = response.status;
+      throw error;
     }
 
     return data;
   } catch (error) {
+    if (error.name === 'AbortError') {
+      throw new Error('Request timed out. The server may be starting up, please try again.');
+    }
     throw error;
   }
 };

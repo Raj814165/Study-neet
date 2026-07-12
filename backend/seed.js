@@ -23,312 +23,144 @@ const STUDENT_DATA = {
 
 const DEMO_COURSES = [
   {
-    title: 'Class 11 Physics: Kinematics & Mechanics',
-    description: 'Complete Physics Mechanics course for NEET 2026. This high-yield course covers 1D and 2D kinematics, laws of motion, friction, work-power-energy, and circular motion with detailed numerical practice.',
+    title: 'Class 11 Physics: Complete Master Course',
+    description: 'Complete Class 11 Physics for NEET/JEE. This comprehensive course covers Kinematics, Laws of Motion, Work Energy Power, Rotational Mechanics, Gravitation, Properties of Matter, and Thermodynamics with detailed one-shot long-format lectures.',
     instructor: 'Alakh Pandey',
     category: 'Physics',
     thumbnail: 'https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=600',
-    duration: '22h 15m',
+    duration: '85h 30m',
     difficulty: 'Advanced',
     rating: 4.9,
-    reviewCount: 15430,
-    enrolledCount: 89000,
+    reviewCount: 24500,
+    enrolledCount: 145000,
     videoUrl: 'https://www.youtube.com/watch?v=25jxGPMF1rM',
     lessons: [
-      { title: 'Units and Measurements - One Shot', videoUrl: 'https://www.youtube.com/watch?v=25jxGPMF1rM', duration: '2:15:30' },
-      { title: 'Motion in a Straight Line', videoUrl: 'https://www.youtube.com/watch?v=8-wgK0zAaqI', duration: '3:22:15' },
-      { title: 'Laws of Motion & Friction', videoUrl: 'https://www.youtube.com/watch?v=Cx73VWk_Rak', duration: '2:35:40' },
-      { title: 'Work, Energy, and Power', videoUrl: 'https://www.youtube.com/watch?v=k_rCYiorZzs', duration: '2:28:10' }
+      { title: 'Mathematical Tools & Vector Algebra', videoUrl: 'https://www.youtube.com/watch?v=25jxGPMF1rM', duration: '5:15:30' },
+      { title: 'Kinematics 1D & 2D (One Shot)', videoUrl: 'https://www.youtube.com/watch?v=8-wgK0zAaqI', duration: '8:22:15' },
+      { title: 'Laws of Motion & Friction', videoUrl: 'https://www.youtube.com/watch?v=Cx73VWk_Rak', duration: '7:35:40' },
+      { title: 'Work, Energy, and Power', videoUrl: 'https://www.youtube.com/watch?v=k_rCYiorZzs', duration: '6:28:10' },
+      { title: 'Rotational Dynamics & Center of Mass', videoUrl: 'https://www.youtube.com/watch?v=rfscVS0vtbw', duration: '9:45:00' },
+      { title: 'Gravitation & Planetary Motion', videoUrl: 'https://www.youtube.com/watch?v=kqtD5dpn9C8', duration: '5:50:30' },
+      { title: 'Fluid Mechanics & Properties of Matter', videoUrl: 'https://www.youtube.com/watch?v=vmEHCJofslg', duration: '8:30:15' },
+      { title: 'Thermodynamics & Kinetic Theory', videoUrl: 'https://www.youtube.com/watch?v=UO98lJQ3QGI', duration: '7:15:00' },
+      { title: 'Oscillations & Waves (One Shot)', videoUrl: 'https://www.youtube.com/watch?v=PkZNo7MFNFg', duration: '8:10:45' }
     ]
   },
   {
-    title: 'Class 11 Physics: Rotational Motion & Gravitation',
-    description: 'Master Rotational Dynamics, Center of Mass, Moment of Inertia, and Gravitation for NEET. Learn tricks to solve complex multi-body problems quickly.',
-    instructor: 'Alakh Pandey',
-    category: 'Physics',
-    thumbnail: 'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=600',
-    duration: '14h 45m',
-    difficulty: 'Advanced',
-    rating: 4.8,
-    reviewCount: 9812,
-    enrolledCount: 62000,
-    videoUrl: 'https://www.youtube.com/watch?v=rfscVS0vtbw',
-    lessons: [
-      { title: 'Center of Mass & Rotational Motion', videoUrl: 'https://www.youtube.com/watch?v=rfscVS0vtbw', duration: '3:45:00' },
-      { title: 'Gravitation - Complete One Shot', videoUrl: 'https://www.youtube.com/watch?v=kqtD5dpn9C8', duration: '2:50:30' }
-    ]
-  },
-  {
-    title: 'Class 11 Physics: Properties of Matter & Fluids',
-    description: 'Detailed study of elasticity, viscosity, surface tension, and fluid dynamics for medical aspirants. Strictly based on NCERT guidelines.',
-    instructor: 'Alakh Pandey',
-    category: 'Physics',
-    thumbnail: 'https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?w=600',
-    duration: '10h 30m',
-    difficulty: 'Intermediate',
-    rating: 4.7,
-    reviewCount: 5410,
-    enrolledCount: 41000,
-    videoUrl: 'https://www.youtube.com/watch?v=QUT1VHiLmmI',
-    lessons: [
-      { title: 'Mechanical Properties of Solids', videoUrl: 'https://www.youtube.com/watch?v=QUT1VHiLmmI', duration: '2:15:00' },
-      { title: 'Fluid Mechanics - One Shot', videoUrl: 'https://www.youtube.com/watch?v=vmEHCJofslg', duration: '3:30:15' }
-    ]
-  },
-  {
-    title: 'Class 11 Physics: Thermodynamics & Waves',
-    description: 'Covering thermal expansion, calorimetry, heat transfer, kinetic theory of gases, thermodynamics cycles, and waves/oscillations.',
-    instructor: 'Alakh Pandey',
-    category: 'Physics',
-    thumbnail: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600',
-    duration: '18h 20m',
-    difficulty: 'Advanced',
-    rating: 4.9,
-    reviewCount: 12040,
-    enrolledCount: 78000,
-    videoUrl: 'https://www.youtube.com/watch?v=UO98lJQ3QGI',
-    lessons: [
-      { title: 'Thermodynamics & Heat Transfer', videoUrl: 'https://www.youtube.com/watch?v=UO98lJQ3QGI', duration: '4:15:00' },
-      { title: 'Simple Harmonic Motion (SHM)', videoUrl: 'https://www.youtube.com/watch?v=PkZNo7MFNFg', duration: '3:10:45' }
-    ]
-  },
-  {
-    title: 'Class 12 Physics: Electrostatics & Potential',
-    description: 'Understand electric charge, Coulomb\'s law, electric fields, Gauss theorem, electric potential, and capacitance with detailed NEET questions.',
+    title: 'Class 12 Physics: Complete Master Course',
+    description: 'Complete Class 12 Physics syllabus. Covers Electrostatics, Current Electricity, Magnetism, Electromagnetic Induction, AC, Ray & Wave Optics, Modern Physics, and Semiconductor Electronics in deep detail.',
     instructor: 'Alakh Pandey',
     category: 'Physics',
     thumbnail: 'https://images.unsplash.com/photo-1548345680-f5475ea5df84?w=600',
-    duration: '16h 50m',
+    duration: '92h 15m',
     difficulty: 'Advanced',
     rating: 4.9,
-    reviewCount: 14500,
-    enrolledCount: 91000,
+    reviewCount: 28900,
+    enrolledCount: 168000,
     videoUrl: 'https://www.youtube.com/watch?v=30CYAV6YSbk',
     lessons: [
-      { title: 'Electric Charges & Fields One Shot', videoUrl: 'https://www.youtube.com/watch?v=30CYAV6YSbk', duration: '4:35:00' },
-      { title: 'Electrostatic Potential & Capacitance', videoUrl: 'https://www.youtube.com/watch?v=vn3tm0quoqE', duration: '3:50:30' }
+      { title: 'Electrostatics & Electric Fields', videoUrl: 'https://www.youtube.com/watch?v=30CYAV6YSbk', duration: '9:35:00' },
+      { title: 'Electric Potential & Capacitance', videoUrl: 'https://www.youtube.com/watch?v=vn3tm0quoqE', duration: '6:50:30' },
+      { title: 'Current Electricity (Complete Chapter)', videoUrl: 'https://www.youtube.com/watch?v=9kRgVxULbag', duration: '8:10:00' },
+      { title: 'Moving Charges, Magnetism & Matter', videoUrl: 'https://www.youtube.com/watch?v=ur6I5m2nTvk', duration: '9:20:00' },
+      { title: 'Electromagnetic Induction & Alternating Current', videoUrl: 'https://www.youtube.com/watch?v=nQVCkqvU1uE', duration: '8:45:30' },
+      { title: 'Ray Optics & Optical Instruments', videoUrl: 'https://www.youtube.com/watch?v=5LrDIWkK_Bc', duration: '11:45:00' },
+      { title: 'Wave Optics (Complete Lecture)', videoUrl: 'https://www.youtube.com/watch?v=9kRgVxULbag', duration: '7:15:30' },
+      { title: 'Modern Physics (Dual Nature, Atoms, Nuclei)', videoUrl: 'https://www.youtube.com/watch?v=25jxGPMF1rM', duration: '12:15:00' },
+      { title: 'Semiconductor Electronics & Logic Gates', videoUrl: 'https://www.youtube.com/watch?v=8-wgK0zAaqI', duration: '8:10:45' }
     ]
   },
   {
-    title: 'Class 12 Physics: Current Electricity',
-    description: 'Drift velocity, Ohm\'s law, Kirchhoff\'s rules, Wheatstone bridge, potentiometer, and heating effects of current. Ideal for NEET revision.',
-    instructor: 'Alakh Pandey',
-    category: 'Physics',
-    thumbnail: 'https://images.unsplash.com/photo-1517420784937-87528255b8eb?w=600',
-    duration: '12h 10m',
-    difficulty: 'Intermediate',
-    rating: 4.8,
-    reviewCount: 8740,
-    enrolledCount: 55000,
-    videoUrl: 'https://www.youtube.com/watch?v=9kRgVxULbag',
-    lessons: [
-      { title: 'Current Electricity - MahaRevision', videoUrl: 'https://www.youtube.com/watch?v=9kRgVxULbag', duration: '5:10:00' },
-      { title: 'Potentiometer & Meter Bridge', videoUrl: 'https://www.youtube.com/watch?v=obH0Po_RGBk', duration: '2:30:15' }
-    ]
-  },
-  {
-    title: 'Class 12 Physics: Magnetism & Induction',
-    description: 'Magnetic effects of current, Biot-Savart law, Ampere\'s law, electromagnetic induction, Faraday\'s law, Lenz\'s law, and alternating current.',
-    instructor: 'Alakh Pandey',
-    category: 'Physics',
-    thumbnail: 'https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=600',
-    duration: '20h 40m',
-    difficulty: 'Advanced',
-    rating: 4.8,
-    reviewCount: 11090,
-    enrolledCount: 71000,
-    videoUrl: 'https://www.youtube.com/watch?v=ur6I5m2nTvk',
-    lessons: [
-      { title: 'Moving Charges & Magnetism', videoUrl: 'https://www.youtube.com/watch?v=ur6I5m2nTvk', duration: '4:20:00' },
-      { title: 'Electromagnetic Induction (EMI)', videoUrl: 'https://www.youtube.com/watch?v=nQVCkqvU1uE', duration: '3:45:30' }
-    ]
-  },
-  {
-    title: 'Class 12 Physics: Ray Optics & Wave Optics',
-    description: 'Complete optics course including reflection, refraction, lenses, prisms, optical instruments, interference, diffraction, and polarization.',
-    instructor: 'Alakh Pandey',
-    category: 'Physics',
-    thumbnail: 'https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=600',
-    duration: '22h 30m',
-    difficulty: 'Advanced',
-    rating: 4.9,
-    reviewCount: 16500,
-    enrolledCount: 98000,
-    videoUrl: 'https://www.youtube.com/watch?v=5LrDIWkK_Bc',
-    lessons: [
-      { title: 'Ray Optics - Complete One Shot', videoUrl: 'https://www.youtube.com/watch?v=5LrDIWkK_Bc', duration: '5:45:00' },
-      { title: 'Wave Optics - Complete One Shot', videoUrl: 'https://www.youtube.com/watch?v=9kRgVxULbag', duration: '4:15:30' }
-    ]
-  },
-  {
-    title: 'Class 12 Physics: Modern Physics & Semiconductors',
-    description: 'Dual nature of radiation, atoms, nuclei, semiconductor diodes, transistors, and logic gates. Highly scoring section for NEET.',
-    instructor: 'Alakh Pandey',
-    category: 'Physics',
-    thumbnail: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600',
-    duration: '15h 15m',
-    difficulty: 'Intermediate',
-    rating: 4.9,
-    reviewCount: 13900,
-    enrolledCount: 84000,
-    videoUrl: 'https://www.youtube.com/watch?v=25jxGPMF1rM',
-    lessons: [
-      { title: 'Dual Nature of Matter & Atoms', videoUrl: 'https://www.youtube.com/watch?v=25jxGPMF1rM', duration: '3:15:00' },
-      { title: 'Semiconductor Electronics & Gates', videoUrl: 'https://www.youtube.com/watch?v=8-wgK0zAaqI', duration: '4:10:45' }
-    ]
-  },
-  {
-    title: 'Class 11 Chemistry: Mole Concept & Structure of Atom',
-    description: 'Learn structural chemistry and physical calculation principles including stoichiometry, empirical formula, Bohr model, and quantum numbers.',
+    title: 'Class 11 Chemistry: Complete Master Course',
+    description: 'Master Class 11 Chemistry. Highly detailed modules on Some Basic Concepts (Mole Concept), Structure of Atom, Periodic Classification, Chemical Bonding, States of Matter, Thermodynamics, Equilibrium, Redox, s-block, p-block, Organic Chemistry Basics (GOC), and Hydrocarbons.',
     instructor: 'Pankaj Sir',
     category: 'Chemistry',
     thumbnail: 'https://images.unsplash.com/photo-1603126852811-376a661614f1?w=600',
-    duration: '12h 40m',
+    duration: '78h 40m',
     difficulty: 'Intermediate',
     rating: 4.8,
-    reviewCount: 7850,
-    enrolledCount: 49000,
+    reviewCount: 19800,
+    enrolledCount: 112000,
     videoUrl: 'https://www.youtube.com/watch?v=dN6safFWWPg',
     lessons: [
-      { title: 'Some Basic Concepts of Chemistry', videoUrl: 'https://www.youtube.com/watch?v=dN6safFWWPg', duration: '3:10:00' },
-      { title: 'Structure of Atom One Shot', videoUrl: 'https://www.youtube.com/watch?v=3hJ2W6EUMR4', duration: '3:45:30' }
+      { title: 'Mole Concept & Stoichiometry', videoUrl: 'https://www.youtube.com/watch?v=dN6safFWWPg', duration: '6:10:00' },
+      { title: 'Atomic Structure One Shot', videoUrl: 'https://www.youtube.com/watch?v=3hJ2W6EUMR4', duration: '7:45:30' },
+      { title: 'Classification of Elements & Periodicity', videoUrl: 'https://www.youtube.com/watch?v=04lpu10ldrQ', duration: '4:30:00' },
+      { title: 'Chemical Bonding & Hybridization', videoUrl: 'https://www.youtube.com/watch?v=W8dAATfMKtg', duration: '9:50:45' },
+      { title: 'Chemical Thermodynamics & Energetics', videoUrl: 'https://www.youtube.com/watch?v=04lpu10ldrQ', duration: '8:15:00' },
+      { title: 'Chemical & Ionic Equilibrium', videoUrl: 'https://www.youtube.com/watch?v=3hJ2W6EUMR4', duration: '10:20:00' },
+      { title: 'General Organic Chemistry (GOC) - Parts 1 & 2', videoUrl: 'https://www.youtube.com/watch?v=W8dAATfMKtg', duration: '11:20:00' },
+      { title: 'Hydrocarbons (Alkanes, Alkenes, Alkynes)', videoUrl: 'https://www.youtube.com/watch?v=dN6safFWWPg', duration: '9:45:15' }
     ]
   },
   {
-    title: 'Class 11 Chemistry: Classification & Bonding',
-    description: 'In-depth study of periodic table properties, chemical bonding, hybridization, VSEPR theory, molecular orbital theory, and hydrogen bonding.',
-    instructor: 'Pankaj Sir',
-    category: 'Chemistry',
-    thumbnail: 'https://images.unsplash.com/photo-1532187643603-ba119ca4109e?w=600',
-    duration: '16h 20m',
-    difficulty: 'Advanced',
-    rating: 4.9,
-    reviewCount: 11040,
-    enrolledCount: 73000,
-    videoUrl: 'https://www.youtube.com/watch?v=04lpu10ldrQ',
-    lessons: [
-      { title: 'Classification of Elements & Periodicity', videoUrl: 'https://www.youtube.com/watch?v=04lpu10ldrQ', duration: '2:30:00' },
-      { title: 'Chemical Bonding & Molecular Structure', videoUrl: 'https://www.youtube.com/watch?v=W8dAATfMKtg', duration: '4:50:45' }
-    ]
-  },
-  {
-    title: 'Class 11 Chemistry: Organic Chemistry Basics (GOC)',
-    description: 'Complete basic organic chemistry. Understand electronic effects, inductive effect, resonance, hyperconjugation, isomerism, and reaction intermediates.',
-    instructor: 'Pankaj Sir',
-    category: 'Chemistry',
-    thumbnail: 'https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=600',
-    duration: '18h 10m',
-    difficulty: 'Advanced',
-    rating: 4.9,
-    reviewCount: 12500,
-    enrolledCount: 81000,
-    videoUrl: 'https://www.youtube.com/watch?v=W8dAATfMKtg',
-    lessons: [
-      { title: 'General Organic Chemistry (GOC) - Part 1', videoUrl: 'https://www.youtube.com/watch?v=W8dAATfMKtg', duration: '5:20:00' },
-      { title: 'General Organic Chemistry (GOC) - Part 2', videoUrl: 'https://www.youtube.com/watch?v=dN6safFWWPg', duration: '4:45:15' }
-    ]
-  },
-  {
-    title: 'Class 12 Chemistry: Kinetics & Electrochemistry',
-    description: 'Learn about galvanic cells, Nernst equation, electrolytic conductance, Faraday laws, rate of reaction, order of reaction, and activation energy.',
-    instructor: 'Pankaj Sir',
-    category: 'Chemistry',
-    thumbnail: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=600',
-    duration: '14h 50m',
-    difficulty: 'Intermediate',
-    rating: 4.8,
-    reviewCount: 9230,
-    enrolledCount: 59000,
-    videoUrl: 'https://www.youtube.com/watch?v=9kRgVxULbag',
-    lessons: [
-      { title: 'Electrochemistry Complete One Shot', videoUrl: 'https://www.youtube.com/watch?v=9kRgVxULbag', duration: '4:15:00' },
-      { title: 'Chemical Kinetics One Shot', videoUrl: 'https://www.youtube.com/watch?v=obH0Po_RGBk', duration: '3:45:30' }
-    ]
-  },
-  {
-    title: 'Class 12 Chemistry: Organic Reactions & Mechanisms',
-    description: 'Understand haloalkanes, alcohols, phenols, ethers, aldehydes, ketones, carboxylic acids, and amines with mechanisms and named reactions.',
+    title: 'Class 12 Chemistry: Complete Master Course',
+    description: 'Complete Class 12 Chemistry preparation. Detailed organic, inorganic, and physical chemistry modules covering Solutions, Electrochemistry, Chemical Kinetics, d- & f- Block Elements, Coordination Compounds, Haloalkanes, Alcohols, Aldehydes, Amines, and Biomolecules.',
     instructor: 'Pankaj Sir',
     category: 'Chemistry',
     thumbnail: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?w=600',
-    duration: '24h 15m',
+    duration: '84h 15m',
     difficulty: 'Advanced',
     rating: 4.9,
-    reviewCount: 14900,
-    enrolledCount: 92000,
-    videoUrl: 'https://www.youtube.com/watch?v=ur6I5m2nTvk',
+    reviewCount: 22400,
+    enrolledCount: 135000,
+    videoUrl: 'https://www.youtube.com/watch?v=9kRgVxULbag',
     lessons: [
-      { title: 'Haloalkanes and Haloarenes', videoUrl: 'https://www.youtube.com/watch?v=ur6I5m2nTvk', duration: '4:30:00' },
-      { title: 'Alcohols, Phenols and Ethers', videoUrl: 'https://www.youtube.com/watch?v=nQVCkqvU1uE', duration: '5:20:15' },
-      { title: 'Aldehydes, Ketones and Carboxylic Acids', videoUrl: 'https://www.youtube.com/watch?v=5LrDIWkK_Bc', duration: '6:15:40' }
+      { title: 'Solutions & Colligative Properties', videoUrl: 'https://www.youtube.com/watch?v=dN6safFWWPg', duration: '6:30:00' },
+      { title: 'Electrochemistry (Full Concept)', videoUrl: 'https://www.youtube.com/watch?v=9kRgVxULbag', duration: '8:15:00' },
+      { title: 'Chemical Kinetics & Rate Laws', videoUrl: 'https://www.youtube.com/watch?v=obH0Po_RGBk', duration: '7:45:30' },
+      { title: 'Coordination Compounds One Shot', videoUrl: 'https://www.youtube.com/watch?v=3hJ2W6EUMR4', duration: '8:20:00' },
+      { title: 'Haloalkanes and Haloarenes Mechanisms', videoUrl: 'https://www.youtube.com/watch?v=ur6I5m2nTvk', duration: '7:30:00' },
+      { title: 'Alcohols, Phenols and Ethers', videoUrl: 'https://www.youtube.com/watch?v=nQVCkqvU1uE', duration: '9:20:15' },
+      { title: 'Aldehydes, Ketones and Carboxylic Acids', videoUrl: 'https://www.youtube.com/watch?v=5LrDIWkK_Bc', duration: '11:15:40' },
+      { title: 'Amines & Nitrogen Containing Compounds', videoUrl: 'https://www.youtube.com/watch?v=obH0Po_RGBk', duration: '6:50:00' },
+      { title: 'Biomolecules & Polymers', videoUrl: 'https://www.youtube.com/watch?v=9kRgVxULbag', duration: '7:40:00' }
     ]
   },
   {
-    title: 'Class 11 Biology: Cell Biology & Biomolecules',
-    description: 'Master cell structure, cell organelles, mitosis, meiosis, and biochemistry principles (proteins, carbohydrates, lipids, nucleic acids).',
+    title: 'Class 11 Biology: Complete Master Course',
+    description: 'Learn Class 11 Biology with visual conceptual clarity. Covers Diversity in Living World, Structural Organisation in Plants & Animals, Cell Structure and Function (Biomolecules, Division), Plant Physiology, and Human Physiology (7 high-yield chapters).',
     instructor: 'Tarun Sir & MD Sir',
     category: 'Biology',
     thumbnail: 'https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=600',
-    duration: '12h 30m',
+    duration: '96h 20m',
     difficulty: 'Beginner',
     rating: 4.9,
-    reviewCount: 11090,
-    enrolledCount: 77000,
+    reviewCount: 31200,
+    enrolledCount: 185000,
     videoUrl: 'https://www.youtube.com/watch?v=h93t-Y8JAT4',
     lessons: [
-      { title: 'Cell: The Unit of Life', videoUrl: 'https://www.youtube.com/watch?v=h93t-Y8JAT4', duration: '3:10:00' },
-      { title: 'Cell Cycle and Cell Division', videoUrl: 'https://www.youtube.com/watch?v=lMwdorFoGtk', duration: '2:50:30' }
+      { title: 'The Living World & Biological Classification', videoUrl: 'https://www.youtube.com/watch?v=h93t-Y8JAT4', duration: '7:10:00' },
+      { title: 'Plant Kingdom & Animal Kingdom', videoUrl: 'https://www.youtube.com/watch?v=lMwdorFoGtk', duration: '9:50:30' },
+      { title: 'Morphology & Anatomy of Flowering Plants', videoUrl: 'https://www.youtube.com/watch?v=ZCEs2xWnvl4', duration: '8:40:00' },
+      { title: 'Cell: Structure, Function & Division', videoUrl: 'https://www.youtube.com/watch?v=h93t-Y8JAT4', duration: '9:15:00' },
+      { title: 'Biomolecules One Shot Lecture', videoUrl: 'https://www.youtube.com/watch?v=lMwdorFoGtk', duration: '6:30:00' },
+      { title: 'Plant Physiology (Photosynthesis, Respiration, Growth)', videoUrl: 'https://www.youtube.com/watch?v=ynUK8zXMulY', duration: '11:50:00' },
+      { title: 'Human Physiology Part 1 (Digestion, Respiration, Circulation)', videoUrl: 'https://www.youtube.com/watch?v=ZCEs2xWnvl4', duration: '12:15:00' },
+      { title: 'Human Physiology Part 2 (Excretion, Locomotion, Control, Integration)', videoUrl: 'https://www.youtube.com/watch?v=ynUK8zXMulY', duration: '13:20:30' }
     ]
   },
   {
-    title: 'Class 11 Biology: Human Physiology Complete',
-    description: 'Digestive system, breathing & respiration, body fluids & circulation, excretory products, locomotion, neural control, and chemical coordination.',
-    instructor: 'Tarun Sir & MD Sir',
-    category: 'Biology',
-    thumbnail: 'https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=600',
-    duration: '28h 45m',
-    difficulty: 'Intermediate',
-    rating: 4.9,
-    reviewCount: 19430,
-    enrolledCount: 121000,
-    videoUrl: 'https://www.youtube.com/watch?v=ZCEs2xWnvl4',
-    lessons: [
-      { title: 'Breathing and Exchange of Gases', videoUrl: 'https://www.youtube.com/watch?v=ZCEs2xWnvl4', duration: '3:15:00' },
-      { title: 'Body Fluids and Circulation', videoUrl: 'https://www.youtube.com/watch?v=ynUK8zXMulY', duration: '4:20:30' }
-    ]
-  },
-  {
-    title: 'Class 12 Biology: Genetics & Evolution',
-    description: 'Mendelian inheritance, molecular genetics, replication, transcription, translation, DNA fingerprinting, and theories of origin and evolution.',
+    title: 'Class 12 Biology: Complete Master Course',
+    description: 'Class 12 Biology syllabus for medical exams. Thoroughly covers Reproduction in Organisms, Flowering Plants and Humans, Reproductive Health, Genetics and Evolution (Principles of Inheritance, Molecular Basis, Evolution), Biology in Human Welfare, Biotechnology and its Applications, and Ecology.',
     instructor: 'Tarun Sir & MD Sir',
     category: 'Biology',
     thumbnail: 'https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=600',
-    duration: '22h 10m',
-    difficulty: 'Advanced',
+    duration: '88h 45m',
+    difficulty: 'Intermediate',
     rating: 4.9,
-    reviewCount: 16900,
-    enrolledCount: 104000,
+    reviewCount: 29400,
+    enrolledCount: 172000,
     videoUrl: 'https://www.youtube.com/watch?v=ZCEs2xWnvl4',
     lessons: [
-      { title: 'Principles of Inheritance and Variation', videoUrl: 'https://www.youtube.com/watch?v=ZCEs2xWnvl4', duration: '5:40:00' },
-      { title: 'Molecular Basis of Inheritance', videoUrl: 'https://www.youtube.com/watch?v=ynUK8zXMulY', duration: '6:15:30' }
-    ]
-  },
-  {
-    title: 'Class 12 Biology: Biotechnology & Ecology',
-    description: 'Genetic engineering tools, PCR, recombinant DNA, applications in medicine & agriculture, ecosystems, biodiversity, and environmental issues.',
-    instructor: 'Tarun Sir & MD Sir',
-    category: 'Biology',
-    thumbnail: 'https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=600',
-    duration: '18h 50m',
-    difficulty: 'Intermediate',
-    rating: 4.8,
-    reviewCount: 12090,
-    enrolledCount: 79000,
-    videoUrl: 'https://www.youtube.com/watch?v=h93t-Y8JAT4',
-    lessons: [
-      { title: 'Biotechnology: Principles & Processes', videoUrl: 'https://www.youtube.com/watch?v=h93t-Y8JAT4', duration: '4:30:00' },
-      { title: 'Organisms and Populations', videoUrl: 'https://www.youtube.com/watch?v=lMwdorFoGtk', duration: '3:20:30' }
+      { title: 'Sexual Reproduction in Flowering Plants', videoUrl: 'https://www.youtube.com/watch?v=h93t-Y8JAT4', duration: '8:25:00' },
+      { title: 'Human Reproduction & Reproductive Health', videoUrl: 'https://www.youtube.com/watch?v=lMwdorFoGtk', duration: '9:40:00' },
+      { title: 'Principles of Inheritance and Variation', videoUrl: 'https://www.youtube.com/watch?v=ZCEs2xWnvl4', duration: '10:40:00' },
+      { title: 'Molecular Basis of Inheritance (Deep Dive)', videoUrl: 'https://www.youtube.com/watch?v=ynUK8zXMulY', duration: '12:15:30' },
+      { title: 'Evolution: Theories and Evidence', videoUrl: 'https://www.youtube.com/watch?v=ZCEs2xWnvl4', duration: '7:50:00' },
+      { title: 'Human Health and Disease & Microbes', videoUrl: 'https://www.youtube.com/watch?v=h93t-Y8JAT4', duration: '9:30:00' },
+      { title: 'Biotechnology: Principles and Recombinant DNA', videoUrl: 'https://www.youtube.com/watch?v=h93t-Y8JAT4', duration: '9:30:00' },
+      { title: 'Ecology & Environment (Ecosystems, Biodiversity, Conservation)', videoUrl: 'https://www.youtube.com/watch?v=lMwdorFoGtk', duration: '11:20:30' }
     ]
   }
 ];

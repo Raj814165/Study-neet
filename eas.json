@@ -8,11 +8,14 @@
       "android": {
         "buildType": "apk"
       },
+      "channel": "preview",
       "env": {
         "EXPO_NO_DOTENV": "1"
       }
     },
-    "production": {}
+    "production": {
+      "channel": "production"
+    }
   },
   "submit": {
     "production": {}
