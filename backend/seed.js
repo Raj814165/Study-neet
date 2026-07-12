@@ -23,144 +23,122 @@ const STUDENT_DATA = {
 
 const DEMO_COURSES = [
   {
-    title: 'Class 11 Physics: Complete Master Course',
-    description: 'Complete Class 11 Physics for NEET/JEE. This comprehensive course covers Kinematics, Laws of Motion, Work Energy Power, Rotational Mechanics, Gravitation, Properties of Matter, and Thermodynamics with detailed one-shot long-format lectures.',
-    instructor: 'Alakh Pandey',
-    category: 'Physics',
-    thumbnail: 'https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=600',
-    duration: '85h 30m',
-    difficulty: 'Advanced',
-    rating: 4.9,
-    reviewCount: 24500,
-    enrolledCount: 145000,
+    title: 'NEET Biology 2025 for Hindi Medium by Ashish Singh Lectures',
+    description: 'NEET Biology 2025 playlist tailored for Hindi Medium aspirants. Complete and thorough lectures from Ashish Singh Lectures.',
+    instructor: 'Ashish Singh Lectures',
+    category: 'Biology',
+    thumbnail: 'https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=600',
+    duration: '2h 04m',
+    difficulty: 'Beginner',
+    rating: 4.8,
+    reviewCount: 450,
+    enrolledCount: 12000,
     videoUrl: 'https://www.youtube.com/watch?v=25jxGPMF1rM',
     lessons: [
-      { title: 'Mathematical Tools & Vector Algebra', videoUrl: 'https://www.youtube.com/watch?v=25jxGPMF1rM', duration: '5:15:30' },
-      { title: 'Kinematics 1D & 2D (One Shot)', videoUrl: 'https://www.youtube.com/watch?v=8-wgK0zAaqI', duration: '8:22:15' },
-      { title: 'Laws of Motion & Friction', videoUrl: 'https://www.youtube.com/watch?v=Cx73VWk_Rak', duration: '7:35:40' },
-      { title: 'Work, Energy, and Power', videoUrl: 'https://www.youtube.com/watch?v=k_rCYiorZzs', duration: '6:28:10' },
-      { title: 'Rotational Dynamics & Center of Mass', videoUrl: 'https://www.youtube.com/watch?v=rfscVS0vtbw', duration: '9:45:00' },
-      { title: 'Gravitation & Planetary Motion', videoUrl: 'https://www.youtube.com/watch?v=kqtD5dpn9C8', duration: '5:50:30' },
-      { title: 'Fluid Mechanics & Properties of Matter', videoUrl: 'https://www.youtube.com/watch?v=vmEHCJofslg', duration: '8:30:15' },
-      { title: 'Thermodynamics & Kinetic Theory', videoUrl: 'https://www.youtube.com/watch?v=UO98lJQ3QGI', duration: '7:15:00' },
-      { title: 'Oscillations & Waves (One Shot)', videoUrl: 'https://www.youtube.com/watch?v=PkZNo7MFNFg', duration: '8:10:45' }
+      { title: "NEET Biology 2025 - Orientation Session : Biology की शानदार शुरुआत With Renu Ma'am", videoUrl: 'https://www.youtube.com/watch?v=25jxGPMF1rM', duration: '42:59' },
+      { title: 'NEET Biology 2025 | L - 1 | वर्गीकरण का आधार | Animal Kingdom | प्राणि जगत By Renu Ma\'am', videoUrl: 'https://www.youtube.com/watch?v=8-wgK0zAaqI', duration: '1:21:25' }
     ]
   },
   {
-    title: 'Class 12 Physics: Complete Master Course',
-    description: 'Complete Class 12 Physics syllabus. Covers Electrostatics, Current Electricity, Magnetism, Electromagnetic Induction, AC, Ray & Wave Optics, Modern Physics, and Semiconductor Electronics in deep detail.',
-    instructor: 'Alakh Pandey',
-    category: 'Physics',
-    thumbnail: 'https://images.unsplash.com/photo-1548345680-f5475ea5df84?w=600',
-    duration: '92h 15m',
+    title: 'NEET Biology (Class 11) | All Chapters Complete Playlist',
+    description: 'All Chapters Complete Playlist | Topicwise Videos Useful for NEET Class 11 preparation.',
+    instructor: 'Magnet Brains',
+    category: 'Biology',
+    thumbnail: 'https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=600',
+    duration: '1h 03m',
+    difficulty: 'Beginner',
+    rating: 4.7,
+    reviewCount: 380,
+    enrolledCount: 9500,
+    videoUrl: 'https://www.youtube.com/watch?v=rfscVS0vtbw',
+    lessons: [
+      { title: 'All About NEET Biology | Everything You Need to Know About NEET Examination', videoUrl: 'https://www.youtube.com/watch?v=rfscVS0vtbw', duration: '25:49' },
+      { title: "How To Crack NEET? | NEET Do's and Don'ts!! | NEET Biology", videoUrl: 'https://www.youtube.com/watch?v=kqtD5dpn9C8', duration: '37:47' }
+    ]
+  },
+  {
+    title: 'Complete NEET Biology by Vipin Sir || NEET 2026',
+    description: 'Complete NEET Biology preparation by Vipin Sir for NEET 2026. Detailed one-shot conceptual lectures.',
+    instructor: 'Vipin Sir',
+    category: 'Biology',
+    thumbnail: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?w=600',
+    duration: '22h 03m',
     difficulty: 'Advanced',
     rating: 4.9,
-    reviewCount: 28900,
-    enrolledCount: 168000,
-    videoUrl: 'https://www.youtube.com/watch?v=30CYAV6YSbk',
+    reviewCount: 1250,
+    enrolledCount: 35000,
+    videoUrl: 'https://www.youtube.com/watch?v=h93t-Y8JAT4',
     lessons: [
-      { title: 'Electrostatics & Electric Fields', videoUrl: 'https://www.youtube.com/watch?v=30CYAV6YSbk', duration: '9:35:00' },
-      { title: 'Electric Potential & Capacitance', videoUrl: 'https://www.youtube.com/watch?v=vn3tm0quoqE', duration: '6:50:30' },
-      { title: 'Current Electricity (Complete Chapter)', videoUrl: 'https://www.youtube.com/watch?v=9kRgVxULbag', duration: '8:10:00' },
-      { title: 'Moving Charges, Magnetism & Matter', videoUrl: 'https://www.youtube.com/watch?v=ur6I5m2nTvk', duration: '9:20:00' },
-      { title: 'Electromagnetic Induction & Alternating Current', videoUrl: 'https://www.youtube.com/watch?v=nQVCkqvU1uE', duration: '8:45:30' },
-      { title: 'Ray Optics & Optical Instruments', videoUrl: 'https://www.youtube.com/watch?v=5LrDIWkK_Bc', duration: '11:45:00' },
-      { title: 'Wave Optics (Complete Lecture)', videoUrl: 'https://www.youtube.com/watch?v=9kRgVxULbag', duration: '7:15:30' },
-      { title: 'Modern Physics (Dual Nature, Atoms, Nuclei)', videoUrl: 'https://www.youtube.com/watch?v=25jxGPMF1rM', duration: '12:15:00' },
-      { title: 'Semiconductor Electronics & Logic Gates', videoUrl: 'https://www.youtube.com/watch?v=8-wgK0zAaqI', duration: '8:10:45' }
+      { title: 'CELL STRUCTURE AND FUNCTION - Complete Unit in One Shot || NEET 2026 || Vipin Sharma', videoUrl: 'https://www.youtube.com/watch?v=h93t-Y8JAT4', duration: '11:20:25' },
+      { title: 'DIVERSITY IN LIVING WORLD - Complete Unit in One Shot || NEET 2026 || Vipin Sir', videoUrl: 'https://www.youtube.com/watch?v=lMwdorFoGtk', duration: '10:42:36' }
     ]
   },
   {
-    title: 'Class 11 Chemistry: Complete Master Course',
-    description: 'Master Class 11 Chemistry. Highly detailed modules on Some Basic Concepts (Mole Concept), Structure of Atom, Periodic Classification, Chemical Bonding, States of Matter, Thermodynamics, Equilibrium, Redox, s-block, p-block, Organic Chemistry Basics (GOC), and Hydrocarbons.',
+    title: '🚀 45 Days Biology Crash Course | Seep Pahuja | Complete NEET Biology',
+    description: 'Fast track crash course covering NEET Biology. 45 Days daily target lectures by Seep Pahuja.',
+    instructor: 'Seep Pahuja',
+    category: 'Biology',
+    thumbnail: 'https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=600',
+    duration: '4h 06m',
+    difficulty: 'Intermediate',
+    rating: 4.9,
+    reviewCount: 2100,
+    enrolledCount: 54000,
+    videoUrl: 'https://www.youtube.com/watch?v=ZCEs2xWnvl4',
+    lessons: [
+      { title: 'NEET 2026 Biology: Human Reproduction One Shot | 1 Day 1 Chapter Free Crash Course By Seep Pahuja', videoUrl: 'https://www.youtube.com/watch?v=ZCEs2xWnvl4', duration: '2:04:48' },
+      { title: 'NEET 2026 Biology: Reproductive Health One Shot | 1 Day 1 Chapter Free Crash Course By Seep Pahuja', videoUrl: 'https://www.youtube.com/watch?v=ynUK8zXMulY', duration: '2:01:45' }
+    ]
+  },
+  {
+    title: 'Complete Physics | UMMEED NEET 2026',
+    description: 'High-quality physics conceptual lectures in Hindi medium under the UMMEED NEET series.',
+    instructor: 'Akhil Goyal Sir',
+    category: 'Physics',
+    thumbnail: 'https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=600',
+    duration: '10h 48m',
+    difficulty: 'Advanced',
+    rating: 4.8,
+    reviewCount: 940,
+    enrolledCount: 22000,
+    videoUrl: 'https://www.youtube.com/watch?v=25jxGPMF1rM',
+    lessons: [
+      { title: 'आधुनिक भौतिकी | UMMEED HINDI NEET | One-Shot | Akhil Goyal Sir Physics NEET | NEET Wallah Hindi', videoUrl: 'https://www.youtube.com/watch?v=25jxGPMF1rM', duration: '5:27:45' },
+      { title: 'तरंग प्रकाशिकी | UMMEED HINDI NEET | One-Shot | Akhil Goyal Sir Physics NEET | NEET Wallah Hindi', videoUrl: 'https://www.youtube.com/watch?v=8-wgK0zAaqI', duration: '5:20:57' }
+    ]
+  },
+  {
+    title: 'Physics Crash Course for NEET - by Alakh sir',
+    description: 'Consolidated Physics Crash Course for NEET aspirants taught directly by Alakh Pandey sir.',
+    instructor: 'Alakh Pandey',
+    category: 'Physics',
+    thumbnail: 'https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=600',
+    duration: '3h 19m',
+    difficulty: 'Intermediate',
+    rating: 4.9,
+    reviewCount: 3800,
+    enrolledCount: 92000,
+    videoUrl: 'https://www.youtube.com/watch?v=Cx73VWk_Rak',
+    lessons: [
+      { title: 'NEET Physics Crash Course || Basic Mathematics | Trigonometry | Differentiation n Integration | Umeed', videoUrl: 'https://www.youtube.com/watch?v=Cx73VWk_Rak', duration: '1:28:24' },
+      { title: 'KINEMATICS 01 || Motion in a Straight Line || 1-D Motion || NEET Physics Crash Course', videoUrl: 'https://www.youtube.com/watch?v=k_rCYiorZzs', duration: '1:51:17' }
+    ]
+  },
+  {
+    title: 'UMMEED 2026 : Complete Class ORGANIC CHEMISTRY in One Shot - NEET 2026',
+    description: 'Complete Class Organic Chemistry in One Shot series for NEET 2026 preparation.',
     instructor: 'Pankaj Sir',
     category: 'Chemistry',
     thumbnail: 'https://images.unsplash.com/photo-1603126852811-376a661614f1?w=600',
-    duration: '78h 40m',
-    difficulty: 'Intermediate',
-    rating: 4.8,
-    reviewCount: 19800,
-    enrolledCount: 112000,
-    videoUrl: 'https://www.youtube.com/watch?v=dN6safFWWPg',
-    lessons: [
-      { title: 'Mole Concept & Stoichiometry', videoUrl: 'https://www.youtube.com/watch?v=dN6safFWWPg', duration: '6:10:00' },
-      { title: 'Atomic Structure One Shot', videoUrl: 'https://www.youtube.com/watch?v=3hJ2W6EUMR4', duration: '7:45:30' },
-      { title: 'Classification of Elements & Periodicity', videoUrl: 'https://www.youtube.com/watch?v=04lpu10ldrQ', duration: '4:30:00' },
-      { title: 'Chemical Bonding & Hybridization', videoUrl: 'https://www.youtube.com/watch?v=W8dAATfMKtg', duration: '9:50:45' },
-      { title: 'Chemical Thermodynamics & Energetics', videoUrl: 'https://www.youtube.com/watch?v=04lpu10ldrQ', duration: '8:15:00' },
-      { title: 'Chemical & Ionic Equilibrium', videoUrl: 'https://www.youtube.com/watch?v=3hJ2W6EUMR4', duration: '10:20:00' },
-      { title: 'General Organic Chemistry (GOC) - Parts 1 & 2', videoUrl: 'https://www.youtube.com/watch?v=W8dAATfMKtg', duration: '11:20:00' },
-      { title: 'Hydrocarbons (Alkanes, Alkenes, Alkynes)', videoUrl: 'https://www.youtube.com/watch?v=dN6safFWWPg', duration: '9:45:15' }
-    ]
-  },
-  {
-    title: 'Class 12 Chemistry: Complete Master Course',
-    description: 'Complete Class 12 Chemistry preparation. Detailed organic, inorganic, and physical chemistry modules covering Solutions, Electrochemistry, Chemical Kinetics, d- & f- Block Elements, Coordination Compounds, Haloalkanes, Alcohols, Aldehydes, Amines, and Biomolecules.',
-    instructor: 'Pankaj Sir',
-    category: 'Chemistry',
-    thumbnail: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?w=600',
-    duration: '84h 15m',
+    duration: '7h 55m',
     difficulty: 'Advanced',
     rating: 4.9,
-    reviewCount: 22400,
-    enrolledCount: 135000,
-    videoUrl: 'https://www.youtube.com/watch?v=9kRgVxULbag',
+    reviewCount: 1650,
+    enrolledCount: 48000,
+    videoUrl: 'https://www.youtube.com/watch?v=dN6safFWWPg',
     lessons: [
-      { title: 'Solutions & Colligative Properties', videoUrl: 'https://www.youtube.com/watch?v=dN6safFWWPg', duration: '6:30:00' },
-      { title: 'Electrochemistry (Full Concept)', videoUrl: 'https://www.youtube.com/watch?v=9kRgVxULbag', duration: '8:15:00' },
-      { title: 'Chemical Kinetics & Rate Laws', videoUrl: 'https://www.youtube.com/watch?v=obH0Po_RGBk', duration: '7:45:30' },
-      { title: 'Coordination Compounds One Shot', videoUrl: 'https://www.youtube.com/watch?v=3hJ2W6EUMR4', duration: '8:20:00' },
-      { title: 'Haloalkanes and Haloarenes Mechanisms', videoUrl: 'https://www.youtube.com/watch?v=ur6I5m2nTvk', duration: '7:30:00' },
-      { title: 'Alcohols, Phenols and Ethers', videoUrl: 'https://www.youtube.com/watch?v=nQVCkqvU1uE', duration: '9:20:15' },
-      { title: 'Aldehydes, Ketones and Carboxylic Acids', videoUrl: 'https://www.youtube.com/watch?v=5LrDIWkK_Bc', duration: '11:15:40' },
-      { title: 'Amines & Nitrogen Containing Compounds', videoUrl: 'https://www.youtube.com/watch?v=obH0Po_RGBk', duration: '6:50:00' },
-      { title: 'Biomolecules & Polymers', videoUrl: 'https://www.youtube.com/watch?v=9kRgVxULbag', duration: '7:40:00' }
-    ]
-  },
-  {
-    title: 'Class 11 Biology: Complete Master Course',
-    description: 'Learn Class 11 Biology with visual conceptual clarity. Covers Diversity in Living World, Structural Organisation in Plants & Animals, Cell Structure and Function (Biomolecules, Division), Plant Physiology, and Human Physiology (7 high-yield chapters).',
-    instructor: 'Tarun Sir & MD Sir',
-    category: 'Biology',
-    thumbnail: 'https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=600',
-    duration: '96h 20m',
-    difficulty: 'Beginner',
-    rating: 4.9,
-    reviewCount: 31200,
-    enrolledCount: 185000,
-    videoUrl: 'https://www.youtube.com/watch?v=h93t-Y8JAT4',
-    lessons: [
-      { title: 'The Living World & Biological Classification', videoUrl: 'https://www.youtube.com/watch?v=h93t-Y8JAT4', duration: '7:10:00' },
-      { title: 'Plant Kingdom & Animal Kingdom', videoUrl: 'https://www.youtube.com/watch?v=lMwdorFoGtk', duration: '9:50:30' },
-      { title: 'Morphology & Anatomy of Flowering Plants', videoUrl: 'https://www.youtube.com/watch?v=ZCEs2xWnvl4', duration: '8:40:00' },
-      { title: 'Cell: Structure, Function & Division', videoUrl: 'https://www.youtube.com/watch?v=h93t-Y8JAT4', duration: '9:15:00' },
-      { title: 'Biomolecules One Shot Lecture', videoUrl: 'https://www.youtube.com/watch?v=lMwdorFoGtk', duration: '6:30:00' },
-      { title: 'Plant Physiology (Photosynthesis, Respiration, Growth)', videoUrl: 'https://www.youtube.com/watch?v=ynUK8zXMulY', duration: '11:50:00' },
-      { title: 'Human Physiology Part 1 (Digestion, Respiration, Circulation)', videoUrl: 'https://www.youtube.com/watch?v=ZCEs2xWnvl4', duration: '12:15:00' },
-      { title: 'Human Physiology Part 2 (Excretion, Locomotion, Control, Integration)', videoUrl: 'https://www.youtube.com/watch?v=ynUK8zXMulY', duration: '13:20:30' }
-    ]
-  },
-  {
-    title: 'Class 12 Biology: Complete Master Course',
-    description: 'Class 12 Biology syllabus for medical exams. Thoroughly covers Reproduction in Organisms, Flowering Plants and Humans, Reproductive Health, Genetics and Evolution (Principles of Inheritance, Molecular Basis, Evolution), Biology in Human Welfare, Biotechnology and its Applications, and Ecology.',
-    instructor: 'Tarun Sir & MD Sir',
-    category: 'Biology',
-    thumbnail: 'https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=600',
-    duration: '88h 45m',
-    difficulty: 'Intermediate',
-    rating: 4.9,
-    reviewCount: 29400,
-    enrolledCount: 172000,
-    videoUrl: 'https://www.youtube.com/watch?v=ZCEs2xWnvl4',
-    lessons: [
-      { title: 'Sexual Reproduction in Flowering Plants', videoUrl: 'https://www.youtube.com/watch?v=h93t-Y8JAT4', duration: '8:25:00' },
-      { title: 'Human Reproduction & Reproductive Health', videoUrl: 'https://www.youtube.com/watch?v=lMwdorFoGtk', duration: '9:40:00' },
-      { title: 'Principles of Inheritance and Variation', videoUrl: 'https://www.youtube.com/watch?v=ZCEs2xWnvl4', duration: '10:40:00' },
-      { title: 'Molecular Basis of Inheritance (Deep Dive)', videoUrl: 'https://www.youtube.com/watch?v=ynUK8zXMulY', duration: '12:15:30' },
-      { title: 'Evolution: Theories and Evidence', videoUrl: 'https://www.youtube.com/watch?v=ZCEs2xWnvl4', duration: '7:50:00' },
-      { title: 'Human Health and Disease & Microbes', videoUrl: 'https://www.youtube.com/watch?v=h93t-Y8JAT4', duration: '9:30:00' },
-      { title: 'Biotechnology: Principles and Recombinant DNA', videoUrl: 'https://www.youtube.com/watch?v=h93t-Y8JAT4', duration: '9:30:00' },
-      { title: 'Ecology & Environment (Ecosystems, Biodiversity, Conservation)', videoUrl: 'https://www.youtube.com/watch?v=lMwdorFoGtk', duration: '11:20:30' }
+      { title: 'IUPAC Nomenclature in ONE SHOT || All Concepts, Tricks & PYQ || NEET 2026', videoUrl: 'https://www.youtube.com/watch?v=dN6safFWWPg', duration: '2:52:26' },
+      { title: 'Isomerism in ONE SHOT || All Concepts, Tricks & PYQ || NEET 2026', videoUrl: 'https://www.youtube.com/watch?v=3hJ2W6EUMR4', duration: '5:02:56' }
     ]
   }
 ];
