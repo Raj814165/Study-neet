@@ -27,7 +27,7 @@ const CONTINUE_CARD_WIDTH = 200;
 
 const HomeScreen = ({ navigation }) => {
   const { user } = useAuth();
-  const { courses, categories, loading, getCoursesByCategory, searchCourses } = useCourses();
+  const { courses, categories, loading, getCoursesByCategory, searchCourses, refreshCourses } = useCourses();
 
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
@@ -52,10 +52,16 @@ const HomeScreen = ({ navigation }) => {
     ]).start();
   }, []);
 
-  const onRefresh = useCallback(() => {
+  const onRefresh = useCallback(async () => {
     setRefreshing(true);
-    setTimeout(() => setRefreshing(false), 1500);
-  }, []);
+    try {
+      await refreshCourses();
+    } catch (error) {
+      console.log('Error refreshing courses:', error.message);
+    } finally {
+      setRefreshing(false);
+    }
+  }, [refreshCourses]);
 
   const enrolledCoursesList = (user?.enrolledCourses || [])
     .map(courseOrId => {
